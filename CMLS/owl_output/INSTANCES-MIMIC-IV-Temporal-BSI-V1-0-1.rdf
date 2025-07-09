@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/"
+  xmlns:time="http://www.w3.org/2006/time#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUDayBegin_10000690_37081114_001">
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T00:00:00.000Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasStayId">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUStay"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasUnit"/>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasICUDay">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUStay"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUDay"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasValue">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasAntibioticTest">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#MicrobiologyEvent"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#AntibioticTest"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#isSepsis">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICDCode"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#partOf">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUDay"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUStay"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasSubjectId">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasTestInterpretation">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#AntibioticTest"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Interpretation"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#BiomarkerCategory"/>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasAge">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#associatedWithICUStay">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasICUStayEvent">
+        <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUStay"/>
+        <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Event"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Event"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUStay"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ClinicalSignEvent">
+    <rdfs:subClassOf rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Event"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#oragnismFound">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#MicrobiologyEvent"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Organism"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#DiagnosisEvent">
+    <rdfs:subClassOf rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Event"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUStayDuration">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Duration"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#BioMarkerEvent">
+    <rdfs:subClassOf rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Event"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasComorbidity">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Patient"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Comorbidity"/>
+  </owl:ObjectProperty>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUStay_Begin_10000690_37081114">
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T19:37:00.000Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUStay_End_10000690_37081114">
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-06T17:03:17.000Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUDayEnd_10000690_37081114_001">
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T23:59:59.000Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#cultureResult">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#MicrobiologyEvent"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#CultureResult"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#concernsPatient">
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Patient"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#SpecimenType"/>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#associatedWithICUDay">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasICUDayEvent">
+        <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUDay"/>
+        <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Event"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Event"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUDay"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasRefRangeUpper">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#testedAntibiotic">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#AntibioticTest"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Antibiotic"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasEvent">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Patient"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Event"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasCategory"/>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ClinicalSignType"/>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#BiomarkerType"/>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasGender">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#AntibioticAdmissionEvent">
+    <rdfs:subClassOf rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Event"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#CategoryEvent_RoutineVitalSigns"/>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasSpecimenType"/>
+  <owl:ObjectProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasICUStay">
+    <rdfs:domain rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Patient"/>
+    <rdfs:range rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUStay"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasClinicalSignName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasRefRangeLower">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ClinicalSignCategory"/>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Unit"/>
+  <owl:DatatypeProperty rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#hasBiomarkerType"/>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_5">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ICUDay"/>
+    <rdfs:label xml:lang="en">DA-5</rdfs:label>
+    <time:hasBeginning>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayBegin_37081114_5">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-06T00:00:00Z</time:inXSDDateTimeStamp>
+      </owl:NamedIndividual>
+    </time:hasBeginning>
+    <time:hasEnd>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayEnd_37081114_5">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-06T17:03:17Z</time:inXSDDateTimeStamp>
+      </owl:NamedIndividual>
+    </time:hasEnd>
+    <partOf>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ICUStay"/>
+        <rdfs:label xml:lang="en">ST-37081114</rdfs:label>
+        <time:hasBeginning rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUStayBegin_37081114"/>
+        <time:hasEnd rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUStayEnd_37081114"/>
+        <time:hasDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">P3DT21H26M</time:hasDuration>
+        <time:hasDurationDescription rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/duration/37081114"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <hasICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1"/>
+        <hasICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+        <hasICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_3"/>
+        <hasICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_4"/>
+        <hasICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_5"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/LengthofUrineCollection_3694_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Urinetube_held_3695_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/CreatineKinaseCK_3709_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/CreatineKinase_MBIsoenzyme_3710_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/TroponinT_3717_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Hematocrit_3696_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Hemoglobin_3697_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/MCH_3698_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/MCHC_3699_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/MCV_3700_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/PlateletCount_3701_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/RDW_3702_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/RedBloodCells_3703_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/WhiteBloodCells_3704_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/AnionGap_3705_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Bicarbonate_3706_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Calcium_Total_3707_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Chloride_3708_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Creatinine_3711_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Glucose_3712_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/HeartRate_2_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuresystolic_3_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressurediastolic_4_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuremean_5_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/HeartRate_6_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuresystolic_7_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressurediastolic_8_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuremean_9_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/HeartRate_10_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/TemperatureCelcius_11_10000690_37081114"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/microbiologyevent/121"/>
+        <hasICUStayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/microbiologyevent/122"/>
+      </owl:NamedIndividual>
+    </partOf>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ICUDay"/>
+    <rdfs:label xml:lang="en">DA-2</rdfs:label>
+    <time:hasBeginning>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayBegin_37081114_2">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T00:00:00Z</time:inXSDDateTimeStamp>
+      </owl:NamedIndividual>
+    </time:hasBeginning>
+    <time:hasEnd>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayEnd_37081114_2">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T23:59:59Z</time:inXSDDateTimeStamp>
+      </owl:NamedIndividual>
+    </time:hasEnd>
+    <partOf rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/LengthofUrineCollection_3694_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Length of Urine Collection</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/LengthofUrineCollection"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/--"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/URINE"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RANDOM.</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">--</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">--</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_LengthofUrineCollection_10000690_37081114_21501103T0125"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Urinetube_held_3695_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Urine tube, held</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Urinetube_held"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/--"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/URINE"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HOLD.  SPECIMEN TO BE HELD 48 HOURS AND DISCARDED.</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">--</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">--</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Urinetube_held_10000690_37081114_21501103T0125"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/CreatineKinaseCK_3709_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Creatine Kinase (CK)</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/CreatineKinaseCK"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/IU-L"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">33.0</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">26.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">140.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_CreatineKinaseCK_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/CreatineKinase_MBIsoenzyme_3710_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Creatine Kinase, MB Isoenzyme</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/CreatineKinase_MBIsoenzyme"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/NG-ML"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NotDone.  CK-MB NOT PERFORMED, TOTAL CK &lt; 100.</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_CreatineKinase_MBIsoenzyme_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/TroponinT_3717_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Troponin T</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/TroponinT"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/NG-ML"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.02</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.01</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_TroponinT_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Hematocrit_3696_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Hematocrit</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Hematocrit"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/HEMATOLOGY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">28.5</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">36.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">48.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Hematocrit_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Hemoglobin_3697_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Hemoglobin</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Hemoglobin"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/HEMATOLOGY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/G-DL"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9.5</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Hemoglobin_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/MCH_3698_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-MCH</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/MCH"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/HEMATOLOGY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/PG"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30.8</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">32.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_MCH_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/MCHC_3699_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-MCHC</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/MCHC"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/HEMATOLOGY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">33.2</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_MCHC_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/MCV_3700_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-MCV</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/MCV"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/HEMATOLOGY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/FL"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">93.0</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">82.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">98.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_MCV_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/PlateletCount_3701_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Platelet Count</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/PlateletCount"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/HEMATOLOGY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/K-UL"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">199.0</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">150.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">440.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_PlateletCount_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/RDW_3702_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-RDW</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/RDW"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/HEMATOLOGY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.4</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.5</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15.5</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_RDW_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/RedBloodCells_3703_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Red Blood Cells</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/RedBloodCells"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/HEMATOLOGY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/M-UL"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.07</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.2</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.4</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_RedBloodCells_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/WhiteBloodCells_3704_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-White Blood Cells</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/WhiteBloodCells"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/HEMATOLOGY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/K-UL"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7.5</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_WhiteBloodCells_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/AnionGap_3705_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Anion Gap</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/AnionGap"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MEQ-L"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11.0</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_AnionGap_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Bicarbonate_3706_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Bicarbonate</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Bicarbonate"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MEQ-L"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">26.0</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">32.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Bicarbonate_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Calcium_Total_3707_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Calcium, Total</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Calcium_Total"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MG-DL"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9.0</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8.4</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.2</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Calcium_Total_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Chloride_3708_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Chloride</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Chloride"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MEQ-L"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">104.0</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">96.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">108.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Chloride_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Creatinine_3711_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Creatinine</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Creatinine"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MG-DL"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.4</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.1</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Creatinine_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+    <hasICUDayEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Glucose_3712_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerEvent"/>
+        <rdfs:label xml:lang="en">BM-Glucose</rdfs:label>
+        <hasBiomarkerType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Glucose"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MG-DL"/>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">77.0</hasValue>
+        <hasRefRangeLower rdf:datatype="http://www.w3.org/2001/XMLSchema#string">70.0</hasRefRangeLower>
+        <hasRefRangeUpper rdf:datatype="http://www.w3.org/2001/XMLSchema#string">105.0</hasRefRangeUpper>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Glucose_10000690_37081114_21501103T0256"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_2"/>
+      </owl:NamedIndividual>
+    </hasICUDayEvent>
+  </owl:NamedIndividual>
+  <time:DurationDescription rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/duration/37081114">
+    <time:days rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</time:days>
+    <time:hours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</time:hours>
+    <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</time:minutes>
+  </time:DurationDescription>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_MCH_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/WhiteBloodCells">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">White Blood Cells</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Patient"/>
+    <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">86.83712001601374</hasAge>
+    <hashasGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hashasGender>
+    <hasSubjectId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000690</hasSubjectId>
+    <isMimicSepsis3 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isMimicSepsis3>
+    <rdfs:label xml:lang="en">PA-10000690</rdfs:label>
+    <hasICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/LengthofUrineCollection_3694_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Urinetube_held_3695_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/CreatineKinaseCK_3709_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/CreatineKinase_MBIsoenzyme_3710_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/TroponinT_3717_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Hematocrit_3696_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Hemoglobin_3697_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/MCH_3698_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/MCHC_3699_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/MCV_3700_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/PlateletCount_3701_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/RDW_3702_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/RedBloodCells_3703_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/WhiteBloodCells_3704_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/AnionGap_3705_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Bicarbonate_3706_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Calcium_Total_3707_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Chloride_3708_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Creatinine_3711_10000690_37081114"/>
+    <hasEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkerevent/Glucose_3712_10000690_37081114"/>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/HeartRate_2_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignEvent"/>
+        <rdfs:label xml:lang="en">CS-Heart Rate</rdfs:label>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">79</hasValue>
+        <hasClinicalSignType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/HeartRate"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigncategory/ROUTINEVITALSIGNS"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/BPM"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_HeartRate_10000690_37081114_21501102T1954"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuresystolic_3_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignEvent"/>
+        <rdfs:label xml:lang="en">CS-Non Invasive Blood Pressure systolic</rdfs:label>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">107</hasValue>
+        <hasClinicalSignType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/NonInvasiveBloodPressuresystolic"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigncategory/ROUTINEVITALSIGNS"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MMHG"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressuresystolic_10000690_37081114_21501102T1954"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressurediastolic_4_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignEvent"/>
+        <rdfs:label xml:lang="en">CS-Non Invasive Blood Pressure diastolic</rdfs:label>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">63</hasValue>
+        <hasClinicalSignType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/NonInvasiveBloodPressurediastolic"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigncategory/ROUTINEVITALSIGNS"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MMHG"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressurediastolic_10000690_37081114_21501102T1954"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuremean_5_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignEvent"/>
+        <rdfs:label xml:lang="en">CS-Non Invasive Blood Pressure mean</rdfs:label>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">71</hasValue>
+        <hasClinicalSignType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/NonInvasiveBloodPressuremean"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigncategory/ROUTINEVITALSIGNS"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MMHG"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressuremean_10000690_37081114_21501102T1954"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/HeartRate_6_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignEvent"/>
+        <rdfs:label xml:lang="en">CS-Heart Rate</rdfs:label>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">75</hasValue>
+        <hasClinicalSignType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/HeartRate"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigncategory/ROUTINEVITALSIGNS"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/BPM"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_HeartRate_10000690_37081114_21501102T2000"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuresystolic_7_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignEvent"/>
+        <rdfs:label xml:lang="en">CS-Non Invasive Blood Pressure systolic</rdfs:label>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">105</hasValue>
+        <hasClinicalSignType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/NonInvasiveBloodPressuresystolic"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigncategory/ROUTINEVITALSIGNS"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MMHG"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressuresystolic_10000690_37081114_21501102T2000"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressurediastolic_8_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignEvent"/>
+        <rdfs:label xml:lang="en">CS-Non Invasive Blood Pressure diastolic</rdfs:label>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</hasValue>
+        <hasClinicalSignType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/NonInvasiveBloodPressurediastolic"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigncategory/ROUTINEVITALSIGNS"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MMHG"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressurediastolic_10000690_37081114_21501102T2000"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuremean_9_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignEvent"/>
+        <rdfs:label xml:lang="en">CS-Non Invasive Blood Pressure mean</rdfs:label>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">64</hasValue>
+        <hasClinicalSignType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/NonInvasiveBloodPressuremean"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigncategory/ROUTINEVITALSIGNS"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MMHG"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressuremean_10000690_37081114_21501102T2000"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/HeartRate_10_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignEvent"/>
+        <rdfs:label xml:lang="en">CS-Heart Rate</rdfs:label>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80</hasValue>
+        <hasClinicalSignType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/HeartRate"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigncategory/ROUTINEVITALSIGNS"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/BPM"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_HeartRate_10000690_37081114_21501102T2012"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/TemperatureCelcius_11_10000690_37081114">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignEvent"/>
+        <rdfs:label xml:lang="en">CS-Temperature Fahrenheit</rdfs:label>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36.5</hasValue>
+        <hasClinicalSignType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/TemperatureCelcius"/>
+        <hasCategory rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigncategory/ROUTINEVITALSIGNS"/>
+        <hasUnit rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/°C"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_TemperatureCelcius_10000690_37081114_21501102T2012"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/microbiologyevent/121">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/MicroBiologyEvent"/>
+        <rdfs:label xml:lang="en">MB-Blood</rdfs:label>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/Blood"/>
+        <cultureResult rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/culture/Negative"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/MicrobiologyEvent_121_21501105T1738"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_4"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+    <hasEvent>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/microbiologyevent/122">
+        <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/MicroBiologyEvent"/>
+        <rdfs:label xml:lang="en">MB-Blood</rdfs:label>
+        <hasSpecimenType rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/Blood"/>
+        <cultureResult rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/culture/Negative"/>
+        <time:hasTime rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/MicrobiologyEvent_122_21501105T1738"/>
+        <concernsPatient rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/patient/10000690"/>
+        <associatedWithICUStay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+        <associatedWithICUDay rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_4"/>
+      </owl:NamedIndividual>
+    </hasEvent>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressurediastolic_10000690_37081114_21501102T2000">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T20:00:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MEQ-L">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">mEq/L</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/culture/Negative">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/CultureResult"/>
+    <rdfs:label xml:lang="en">Negative</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Hematocrit_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/BPM">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">bpm</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/LengthofUrineCollection">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Length of Urine Collection</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/URINE">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/SpecimenType"/>
+    <rdfs:label xml:lang="en">URINE</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/M-UL">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">m/uL</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/HEMATOLOGY">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerCategory"/>
+    <rdfs:label xml:lang="en">Hematology</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MG-DL">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">mg/dL</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_LengthofUrineCollection_10000690_37081114_21501103T0125">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T01:25:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_MCHC_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/NonInvasiveBloodPressurediastolic">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignType"/>
+    <rdfs:label xml:lang="en">Non Invasive Blood Pressure diastolic</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/Blood">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/SpecimenType"/>
+    <rdfs:label xml:lang="en">Blood</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/CreatineKinase_MBIsoenzyme">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Creatine Kinase, MB Isoenzyme</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/PG">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">pg</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_HeartRate_10000690_37081114_21501102T2012">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T20:12:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Glucose">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Glucose</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressuresystolic_10000690_37081114_21501102T1954">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T19:54:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_TroponinT_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/K-UL">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">K/uL</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/NonInvasiveBloodPressuremean">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignType"/>
+    <rdfs:label xml:lang="en">Non Invasive Blood Pressure mean</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/G-DL">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">g/dL</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUStayBegin_37081114">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T19:37:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkercategory/CHEMISTRY">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerCategory"/>
+    <rdfs:label xml:lang="en">Chemistry</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Chloride">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Chloride</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_MCV_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/RDW">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">RDW</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayBegin_37081114_1">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T19:37:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUStayEnd_37081114">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-06T17:03:17Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/MicrobiologyEvent_122_21501105T1738">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-05T17:38:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/AnionGap">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Anion Gap</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/specimentype/BLOOD">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/SpecimenType"/>
+    <rdfs:label xml:lang="en">BLOOD</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_RDW_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/MCHC">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">MCHC</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_4">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ICUDay"/>
+    <rdfs:label xml:lang="en">DA-4</rdfs:label>
+    <time:hasBeginning>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayBegin_37081114_4">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-05T00:00:00Z</time:inXSDDateTimeStamp>
+      </owl:NamedIndividual>
+    </time:hasBeginning>
+    <time:hasEnd>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayEnd_37081114_4">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-05T23:59:59Z</time:inXSDDateTimeStamp>
+      </owl:NamedIndividual>
+    </time:hasEnd>
+    <partOf rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/microbiologyevent/121"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/microbiologyevent/122"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Hemoglobin_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/FL">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">fL</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_TemperatureCelcius_10000690_37081114_21501102T2012">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T20:12:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/TemperatureCelcius">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignType"/>
+    <rdfs:label xml:lang="en">Temperature Fahrenheit</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_CreatineKinaseCK_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_RedBloodCells_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_1">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ICUDay"/>
+    <rdfs:label xml:lang="en">DA-1</rdfs:label>
+    <time:hasBeginning rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayBegin_37081114_1"/>
+    <time:hasEnd>
+      <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayEnd_37081114_1">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T23:59:59Z</time:inXSDDateTimeStamp>
+      </owl:NamedIndividual>
+    </time:hasEnd>
+    <partOf rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/HeartRate_2_10000690_37081114"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuresystolic_3_10000690_37081114"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressurediastolic_4_10000690_37081114"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuremean_5_10000690_37081114"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/HeartRate_6_10000690_37081114"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuresystolic_7_10000690_37081114"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressurediastolic_8_10000690_37081114"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/NonInvasiveBloodPressuremean_9_10000690_37081114"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/HeartRate_10_10000690_37081114"/>
+    <hasICUDayEvent rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsignevent/TemperatureCelcius_11_10000690_37081114"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Hemoglobin">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Hemoglobin</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressuremean_10000690_37081114_21501102T2000">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T20:00:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Glucose_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Calcium_Total">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Calcium, Total</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_PlateletCount_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/°C">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">°C</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Creatinine">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Creatinine</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_WhiteBloodCells_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/MCH">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">MCH</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Calcium_Total_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUStay">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Interval"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/TroponinT">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Troponin T</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#MicrobiologyEvent">
+    <rdfs:subClassOf rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Event"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressuresystolic_10000690_37081114_21501102T2000">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T20:00:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_AnionGap_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_HeartRate_10000690_37081114_21501102T2000">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T20:00:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICUDay">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Interval"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayEnd_37081114_3">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-04T23:59:59Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/MMHG">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">mmHg</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/CreatineKinaseCK">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Creatine Kinase (CK)</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Creatinine_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Chloride_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Hematocrit">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Hematocrit</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressuremean_10000690_37081114_21501102T1954">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T19:54:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_HeartRate_10000690_37081114_21501102T1954">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T19:54:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/MicrobiologyEvent_121_21501105T1738">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-05T17:38:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#AntibioticTest"/>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayBegin_37081114_3">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-04T00:00:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Bicarbonate">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Bicarbonate</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ClinicalSignEvent_NonInvasiveBloodPressurediastolic_10000690_37081114_21501102T1954">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-02T19:54:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/HeartRate">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignType"/>
+    <rdfs:label xml:lang="en">Heart Rate</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#CultureResult"/>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/RedBloodCells">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Red Blood Cells</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Event">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icuday/37081114_3">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ICUDay"/>
+    <rdfs:label xml:lang="en">DA-3</rdfs:label>
+    <time:hasBeginning rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayBegin_37081114_3"/>
+    <time:hasEnd rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/ICUDayEnd_37081114_3"/>
+    <partOf rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/icustay/37081114"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Bicarbonate_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/PlateletCount">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Platelet Count</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/IU-L">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">IU/L</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_CreatineKinase_MBIsoenzyme_10000690_37081114_21501103T0256">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T02:56:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/instant/BiomarkerEvent_Urinetube_held_10000690_37081114_21501103T0125">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    <time:inXSDDateTimeStamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2150-11-03T01:25:00Z</time:inXSDDateTimeStamp>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Antibiotic"/>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/MCV">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">MCV</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/--">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">--</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/NG-ML">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">ng/mL</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigncategory/ROUTINEVITALSIGNS">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignCategory"/>
+    <rdfs:label xml:lang="en">Routine Vital Signs</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Organism"/>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/biomarkertype/Urinetube_held">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/BiomarkerType"/>
+    <rdfs:label xml:lang="en">Urine tube, held</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/clinicalsigntype/NonInvasiveBloodPressuresystolic">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/ClinicalSignType"/>
+    <rdfs:label xml:lang="en">Non Invasive Blood Pressure systolic</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/unit/">
+    <rdf:type rdf:resource="http://www.cnam.fr/MIMIC4-ICU-BSI/V1/Unit"/>
+    <rdfs:label xml:lang="en">%</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Interpretation"/>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Patient">
+    <rdfs:comment>Patient in ICU</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#Comorbidity"/>
+  <owl:Class rdf:about="http://www.cnam.fr/MIMIC4-ICU-BSI/V1#ICDCode"/>
+</rdf:RDF>
