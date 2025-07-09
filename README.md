@@ -39,7 +39,7 @@ CMLS/
 Before running the process, you must configure the 'mimic_owl.ini' file located in 'owl_creator/config/'.
 
 
-### Execute the process
+### Execute the pipeline
 To run the process, you must execute the main_owlcreator.py file.
 
 
