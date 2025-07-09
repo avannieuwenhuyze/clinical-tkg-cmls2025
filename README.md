@@ -4,6 +4,11 @@
 
 The ability to query and reason over temporally evolving clinical data is key to improving decision-making in intensive care units (ICUs). Hidden synergies between medical markers are searched by clinicians and medical staff in order to make decisions about a particular critical case in intensive care. In this paper, we propose a competency-question-guided conceptual modeling approach to transform raw ICU data into an OWL-Time-compliant temporal knowledge graph. Based on clinically relevant concepts extracted from competency questions and aligned with the data schema, we design an ontology for representing temporally anchored events such as biomarker measurements, symptoms, and treatments. We then propose a pipeline to instantiate this ontology with ICU data from MIMIC-IV dataset and compute temporal relations dynamically during post-processing, enabling flexible querying across event timelines. We demonstrate the benefit of our approach through a use case on bloodstream infection detection in ICU patients, showing how temporally grounded questions can uncover clinically relevant temporal knowledge not explicitly present in the source data, and make it accessible through a reproducible, queryable graph.
 
+### Authors
+Aurélien Vannieuwenhuyze - orcidID{0009-0004-5992-5005} - aurelien.vannieuwenhuyze@lecnam.net  
+Nada Mimouni - orcidID{0009-0006-5601-3005}  - nada.mimouni@lecnam.net  
+Cédric Du Mouza - orcidID{0000-0001-5170-4954} - cedric.dumouza@lecnam.net
+
 ## Getting Started
 
 ### Data
